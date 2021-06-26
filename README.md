@@ -1,6 +1,6 @@
 # **flash_chat**
 
-### A chat application made using flutter, to learn basics of firebase.
+### A chat application made using flutter, to learn basics of firebase authentication and cloud firestore.
 
 ## **Screenshots :**
 <p><img src = "https://github.com/mohakkhowal/flash_chat/blob/master/ss/1.jpg?raw=true" height = 400, width = 180>
