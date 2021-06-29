@@ -40,7 +40,8 @@ class _ChatScreen2State extends State<ChatScreen2> {
           icon: Icon(Icons.arrow_back_ios),
           onPressed: () async {
             await _auth.signOut();
-            Navigator.pushNamedAndRemoveUntil(context, 'welcome', (route) => false);
+            Navigator.pushNamedAndRemoveUntil(
+                context, 'welcome', (route) => false);
           },
         ),
       ),
@@ -88,11 +89,14 @@ class _ChatScreen2State extends State<ChatScreen2> {
                         icon: Icon(Icons.send_outlined, color: Colors.white),
                         onPressed: () async {
                           messageController.clear();
-                          await _firestore.collection('messages').add({
-                            'sender': loggedInUser.email,
-                            'text': messageText,
-                            'timestamp': FieldValue.serverTimestamp(),
-                          });
+                          if (messageText != null) {
+                            await _firestore.collection('messages').add({
+                              'sender': loggedInUser.email,
+                              'text': messageText,
+                              'timestamp': FieldValue.serverTimestamp(),
+                            });
+                            messageText = null;
+                          }
                         },
                       )
                     ]),
