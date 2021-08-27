@@ -1,5 +1,5 @@
 # **flash_chat**
-
+Deployed at :  https://flash-chat-ffcb2.web.app
 ### A chat application made using flutter, to learn basics of firebase authentication and cloud firestore.
 
 ## **Screenshots :**
